@@ -1,6 +1,15 @@
+import {cn} from "@/lib/utils";
+
 const HeroHead = ({className}: {className?: string}) => {
 	return (
-		<svg width="543" height="727" viewBox="0 0 543 727" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg
+			width="543"
+			height="727"
+			viewBox="0 0 543 727"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			className={cn("", className)}
+		>
 			<text fill="white" xmlSpace="preserve" style={{whiteSpace: 'pre'}} fontSize="16"
 			      letterSpacing="0em"><tspan x="374" y="15.3182">C</tspan></text>
 			<text fill="white" xmlSpace="preserve" style={{whiteSpace: 'pre'}} fontFamily="Inter" fontSize="16"

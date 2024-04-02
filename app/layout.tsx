@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter, Libre_Caslon_Text } from 'next/font/google'
 import './globals.css'
 import clsx from 'clsx'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 const libreCaslonText = Libre_Caslon_Text({ subsets: ['latin'], weight: ['400', '700']})
@@ -18,7 +20,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={clsx(inter.className, libreCaslonText.className)}>{children}</body>
+			<body className={clsx(inter.className, libreCaslonText.className)}>
+				<Navbar />
+				{children}
+				<Footer />
+			</body>
 		</html>
 	)
 }
