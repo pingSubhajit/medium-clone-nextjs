@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const CTASection = ({className}: {className?: string}) => {
 	return (
-		<div className={cn('relative overflow-hidden', className)}>
+		<div className={cn('relative overflow-hidden z-10', className)}>
 			<div className="container mx-auto h-full 2xl:max-w-[1920px] px-6 lg:px-12 py-12 flex flex-col items-start gap-12">
 				<h2 className="lg:max-w-[500px] xl:max-w-[700px] 2xl:max-w-[900px] text-4xl lg:text-5xl xl:text-7xl 2xl:text-8xl text-white">
 					Earn money from your writing.

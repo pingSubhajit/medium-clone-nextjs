@@ -1,14 +1,17 @@
+'use client'
+
 import {cn} from '@/lib/utils'
 import phone1 from '@/public/phone_1.png'
 import phone2 from '@/public/phone_2.png'
 import Image from 'next/image'
 import Button from '@/components/utilities/Button'
 import Separator from '@/components/utilities/Separator'
+import {motion} from 'framer-motion'
 
 const CreateYourSpaceSection = ({className}: {className?: string}) => {
 	return (
 		<div className={cn('bg-peach', className)}>
-			<div className="container mx-auto h-full 2xl:max-w-[1920px] px-6 lg:px-12 pt-12 flex flex-col items-center lg:flex-row lg:items-stretch justify-between overflow-x-hidden">
+			<div className="container mx-auto h-full 2xl:max-w-[1920px] px-6 lg:px-12 pt-12 flex flex-col items-center lg:flex-row lg:items-stretch justify-between overflow-hidden">
 				<div className="pb-12 lg:w-[50%] flex flex-col justify-between">
 					<h2 className="lg:max-w-[500px] xl:max-w-[700px] text-4xl lg:text-5xl xl:text-7xl 2xl:text-8xl">
 						Create your space.
@@ -24,12 +27,27 @@ const CreateYourSpaceSection = ({className}: {className?: string}) => {
 				</div>
 
 				<div className="lg:h-full lg:w-[50%] flex items-end">
-					<Image src={phone1} alt="phone1"/>
-					<Image src={phone2} alt="phone2" className="ml-[-30%]"/>
+					<motion.div
+						initial={{y: '100%'}}
+						whileInView={{y: 0}}
+						transition={{duration: 0.8, type: 'spring'}}
+						viewport={{ once: true }}
+					>
+						<Image src={phone1} alt="phone1"/>
+					</motion.div>
+					<motion.div
+						initial={{y: '100%'}}
+						whileInView={{y: 0}}
+						transition={{duration: 1, type: 'spring'}}
+						viewport={{ once: true }}
+						className="ml-[-30%]"
+					>
+						<Image src={phone2} alt="phone2" />
+					</motion.div>
 				</div>
 			</div>
 
-			<Separator />
+			<Separator/>
 
 			<div className="container mx-auto h-full 2xl:max-w-[1920px] flex p-0">
 				<div className="w-[50%] border-l-2 border-black p-4 lg:p-12">

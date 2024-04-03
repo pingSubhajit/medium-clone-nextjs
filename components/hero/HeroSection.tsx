@@ -2,6 +2,7 @@ import Button from '@/components/utilities/Button'
 import Navbar from '@/components/Navbar'
 import HeroHead from '@/components/hero/HeroHead'
 import {cn} from '@/lib/utils'
+import TypingAnimation from "@/components/utilities/TypingAnimation";
 
 const HeroSection = ({className}: {className?: string}) => {
 	return (
@@ -14,8 +15,9 @@ const HeroSection = ({className}: {className?: string}) => {
 				<div className="w-full lg:w-auto mt-8 lg:mt-0 pb-12 flex flex-col items-center lg:items-start">
 					<p className="text-white text-xs xl:text-sm font-sans uppercase tracking-[0.4em] font-bold mb-5 text-center lg:text-left">Start
 						a blog for free</p>
-					<h1 className="max-w-[900px] text-5xl lg:text-6xl xl:text-8xl 2xl:text-9xl text-center lg:text-left">Publish, grow, and earn, all in
-						one place.</h1>
+					<h1 className="max-w-[900px] text-5xl lg:text-6xl xl:text-8xl 2xl:text-9xl text-center lg:text-left">
+						<TypingAnimation text="Publish, grow, and earn, all in one place." />
+					</h1>
 					<p className="max-w-[600px] xl:text-lg font-sans font-medium mt-8 lg:mt-16 text-center lg:text-left">
 						If you have a story to tell, knowledge to share, or a perspective to offer ——— welcome home.
 						Sign up for free

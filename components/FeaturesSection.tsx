@@ -1,7 +1,10 @@
+'use client'
+
 import {cn} from '@/lib/utils'
 import Separator from '@/components/utilities/Separator'
 import audienceInsightImage from '@/public/audience_insight_image.png'
 import Image from 'next/image'
+import {motion} from 'framer-motion'
 
 const GridBoxContent = ({title, description}: {title: string, description: string}) => {
 	return (
@@ -33,7 +36,8 @@ const FeaturesSection = ({className}: { className?: string }) => {
 			<Separator />
 
 			<div className="container mx-auto h-full 2xl:max-w-[1920px] p-0 grid grid-cols-9 grid-rows-2 border-x-2 border-black">
-				<GridBox className="lg:pb-0 xl:pb-0 2xl:pb-0 col-span-9 md:col-span-3 xl:row-span-2 border-b-2 xl:border-b-0 md:border-r-2">
+				<GridBox
+					className="lg:pb-0 xl:pb-0 2xl:pb-0 col-span-9 md:col-span-3 xl:row-span-2 border-b-2 xl:border-b-0 md:border-r-2">
 					<div className="flex flex-col gap-8">
 						<GridBoxContent
 							title='Audience insights.'
@@ -41,7 +45,15 @@ const FeaturesSection = ({className}: { className?: string }) => {
 						/>
 					</div>
 
-					<Image src={audienceInsightImage} alt="audienceInsightImage" className="hidden lg:block" />
+					<motion.div
+						initial={{y: '100%'}}
+						whileInView={{y: 0}}
+						transition={{duration: 0.8, type: 'spring'}}
+						viewport={{ once: true }}
+						className="hidden lg:block"
+					>
+						<Image src={audienceInsightImage} alt="audienceInsightImage"/>
+					</motion.div>
 				</GridBox>
 
 				<GridBox className="col-span-9 md:col-span-3 md:border-r-2 border-b-2">

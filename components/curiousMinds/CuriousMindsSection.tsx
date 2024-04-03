@@ -4,6 +4,7 @@ import {cn} from '@/lib/utils'
 import {useState} from 'react'
 
 import Person, {Person as PersonType} from '@/components/curiousMinds/Person'
+import TypingAnimation from '@/components/utilities/TypingAnimation'
 
 const people: PersonType[] = [
 	{
@@ -54,8 +55,8 @@ const CuriousMindsSection = ({className}: {className?: string}) => {
 			<div className="container mx-auto h-full items-start 2xl:max-w-[1920px] px-6 lg:px-12 py-12 flex flex-col lg:flex-row justify-between gap-14 lg:gap-0">
 				<h2 className="lg:max-w-[500px] xl:max-w-[700px] text-4xl lg:text-5xl xl:text-7xl 2xl:text-8xl text-white">
 					Join a network of curious minds
-					{hoveredPerson && ` with ${hoveredPerson.name}`}
-					<div className="inline-block ml-2 h-8 lg:h-12 2xl:h-16 w-1 bg-white animate-[pulse_1s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
+					<TypingAnimation text={hoveredPerson ? ` with ${hoveredPerson?.name!}` : ''} />
+					{/*<div className="inline-block ml-2 h-8 lg:h-12 2xl:h-16 w-1 bg-white animate-[pulse_1s_cubic-bezier(0.4,0,0.6,1)_infinite]"/>*/}
 				</h2>
 
 				<div className="w-full lg:w-[40%]">
