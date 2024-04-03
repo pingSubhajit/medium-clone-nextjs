@@ -38,7 +38,7 @@ const CreateYourSpaceSection = ({className}: {className?: string}) => {
 					<motion.div
 						initial={{y: '100%'}}
 						whileInView={{y: 0}}
-						transition={{duration: 1, type: 'spring'}}
+						transition={{duration: 1, type: 'spring', delay: 0.3}}
 						viewport={{ once: true }}
 						className="ml-[-30%]"
 					>
