@@ -3,65 +3,82 @@ import Separator from '@/components/utilities/Separator'
 import audienceInsightImage from '@/public/audience_insight_image.png'
 import Image from 'next/image'
 
-const FeaturesSection = ({className}: {className?: string}) => {
+const GridBoxContent = ({title, description}: {title: string, description: string}) => {
+	return (
+		<>
+			<h3 className="text-3xl lg:text-4xl xl:text-5xl">{title}</h3>
+			<p className="font-sans font-medium text-sm lg:text-lg leading-6 max-w-[400px]">{description}</p>
+		</>
+	)
+}
+
+const GridBox = ({children, className}: {children: React.ReactNode, className?: string}) => {
+	return (
+		<div className={cn('col-span-2 p-4 lg:p-8 xl:p-10 2xl:p-11 border-black flex flex-col justify-between gap-8', className)}>
+			{children}
+		</div>
+	)
+}
+
+const FeaturesSection = ({className}: { className?: string }) => {
 	return (
 		<div className={cn('bg-white', className)}>
 			<div className="container mx-auto h-full 2xl:max-w-[1920px] p-12 flex flex-col items-center">
-				<h2 className="max-w-[900px] text-8xl text-center leading-tight">Find and grow your audience.</h2>
-				<p className="mt-4 font-sans font-medium text-lg leading-6">
+				<h2 className="max-w-[900px] text-4xl lg:text-5xl xl:text-7xl 2xl:text-8xl text-center leading-tight">Find and grow your audience.</h2>
+				<p className="mt-4 font-sans font-medium text-sm lg:text-lg leading-6 text-center lg:text-left">
 						With simple tools and features, you have the chance to connect with over 100 million curious readers.
 				</p>
 			</div>
 
 			<Separator />
 
-			<div className="container mx-auto h-full 2xl:max-w-[1920px] grid grid-cols-9 grid-rows-2 border-x-2 border-black">
-				<div className="col-span-3 row-span-2 p-11 pb-0 border-r-2 border-black flex flex-col justify-between">
-					<div>
-						<h3 className="text-5xl leading-tight">Audience insights.</h3>
-						<p className="mt-12 font-sans font-medium text-lg leading-6 max-w-[400px]">
-							Use data to learn what resonates with your readers so you can keep growing your audience
-						</p>
+			<div className="container mx-auto h-full 2xl:max-w-[1920px] p-0 grid grid-cols-9 grid-rows-2 border-x-2 border-black">
+				<GridBox className="lg:pb-0 xl:pb-0 2xl:pb-0 col-span-9 md:col-span-3 xl:row-span-2 border-b-2 xl:border-b-0 md:border-r-2">
+					<div className="flex flex-col gap-8">
+						<GridBoxContent
+							title='Audience insights.'
+							description='Use data to learn what resonates with your readers so you can keep growing your audience'
+						/>
 					</div>
 
-					<Image src={audienceInsightImage} alt="audienceInsightImage" />
-				</div>
+					<Image src={audienceInsightImage} alt="audienceInsightImage" className="hidden lg:block" />
+				</GridBox>
 
-				<div className="col-span-3 p-11 border-r-2 border-b-2 border-black flex flex-col justify-between">
-					<h3 className="text-5xl leading-tight">Social connectivity.</h3>
-					<p className="font-sans font-medium text-lg leading-6 max-w-[400px]">
-						Find people you are already connected with on Twitter and easily share your stories across
-						platforms.
-					</p>
-				</div>
+				<GridBox className="col-span-9 md:col-span-3 md:border-r-2 border-b-2">
+					<GridBoxContent
+						title='Social connectivity.'
+						description='Find people you are already connected with on Twitter and easily share your stories across
+						platforms.'
+					/>
+				</GridBox>
 
-				<div className="col-span-3 p-11 border-b-2 border-black flex flex-col justify-between">
-					<h3 className="text-5xl leading-tight">Powerful network.</h3>
-					<p className="font-sans font-medium text-lg leading-6 max-w-[400px]">
-						Readers can discover and follow you easily with tailored feeds and recommendations.
-					</p>
-				</div>
+				<GridBox className="col-span-9 md:col-span-3 border-b-2">
+					<GridBoxContent
+						title='Powerful network.'
+						description='Readers can discover and follow you easily with tailored feeds and recommendations.'
+					/>
+				</GridBox>
 
-				<div className="col-span-2 p-11 border-r-2 border-black flex flex-col justify-between">
-					<h3 className="text-5xl leading-tight">Email subscriptions.</h3>
-					<p className="font-sans font-medium text-lg leading-6 max-w-[400px]">
-						Reach your readers by having your stories delivered directly to their inboxes.
-					</p>
-				</div>
+				<GridBox className="col-span-9 md:col-span-3 xl:col-span-2 md:border-r-2 border-b-2 md:border-b-0">
+					<GridBoxContent
+						title='Email subscriptions.'
+						description='Reach your readers by having your stories delivered directly to their inboxes.'
+					/>
+				</GridBox>
 
-				<div className="col-span-2 p-11 border-r-2 border-black flex flex-col justify-between">
-					<h3 className="text-5xl leading-tight">Interactive discussions.</h3>
-					<p className="font-sans font-medium text-lg leading-6 mt-16 max-w-[400px]">
-						Build relationships with your readers through a threaded comments section.
-					</p>
-				</div>
+				<GridBox className="col-span-9 md:col-span-3 xl:col-span-2 md:border-r-2 border-b-2 md:border-b-0">
+					<GridBoxContent
+						title='Interactive discussions.'
+						description='Build relationships with your readers through a threaded comments section.'
+					/>
+				</GridBox>
 
-				<div className="col-span-2 p-11">
-					<h3 className="text-5xl flex flex-col justify-between leading-tight">Custom design.</h3>
-					<p className="font-sans font-medium text-lg leading-6 mt-16 max-w-[400px]">
-						Easily customize your page to stand out and build your brand.
-					</p>
-				</div>
+				<GridBox className="col-span-9 md:col-span-3 xl:col-span-2">
+					<GridBoxContent
+						title='Custom design.'
+						description='Easily customize your page to stand out and build your brand.'
+					/>
+				</GridBox>
 			</div>
 		</div>
 	)

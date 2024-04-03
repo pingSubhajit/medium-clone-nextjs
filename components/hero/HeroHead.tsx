@@ -1,4 +1,4 @@
-import {cn} from "@/lib/utils";
+import {cn} from '@/lib/utils'
 
 const HeroHead = ({className}: {className?: string}) => {
 	return (
@@ -8,7 +8,7 @@ const HeroHead = ({className}: {className?: string}) => {
 			viewBox="0 0 543 727"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			className={cn("", className)}
+			className={cn('', className)}
 		>
 			<text fill="white" xmlSpace="preserve" style={{whiteSpace: 'pre'}} fontSize="16"
 			      letterSpacing="0em"><tspan x="374" y="15.3182">C</tspan></text>

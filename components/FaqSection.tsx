@@ -40,8 +40,8 @@ const faqItems: FaqItem[] = [
 const FaqSection = ({className}: {className?: string}) => {
 	return (
 		<div className={cn('bg-black', className)}>
-			<div className="container mx-auto h-full 2xl:max-w-[1920px] p-12 flex flex-col items-start gap-12">
-				<h3 className="text-5xl leading-tight text-white">More about writing on Medium:</h3>
+			<div className="container mx-auto h-full 2xl:max-w-[1920px] px-6 lg:px-12 py-12 flex flex-col items-start gap-12">
+				<h3 className="text-3xl lg:text-4xl xl:text-5xl leading-tight text-white">More about writing on Medium:</h3>
 
 				<Accordion type="multiple" className="w-full">
 					{faqItems.map((item, index) => (

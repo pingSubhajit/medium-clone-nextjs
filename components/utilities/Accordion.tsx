@@ -29,8 +29,8 @@ const AccordionTrigger = React.forwardRef<
 		<AccordionPrimitive.Trigger
 			ref={ref}
 			className={cn(
-				'flex flex-1 items-center justify-between py-8 font-medium transition-all ' +
-				'[&[data-state=open]>svg]:rotate-0 text-white text-lg font-sans',
+				'flex flex-1 items-center justify-between py-4 lg:py-8 font-medium transition-all ' +
+				'[&[data-state=open]>svg]:rotate-0 text-white lg:text-lg font-sans text-left',
 				className
 			)}
 			{...props}
@@ -52,7 +52,7 @@ const AccordionContent = React.forwardRef<
 		data-[state=open]:animate-accordion-down"
 		{...props}
 	>
-		<div className={cn('pt-4 pb-6 text-white font-sans text-base', className)}>{children}</div>
+		<div className={cn('pt-2 lg:pt-4 pb-4 lg:pb-6 text-white/70 font-sans text-sm lg:text-base', className)}>{children}</div>
 	</AccordionPrimitive.Content>
 ))
 

@@ -5,12 +5,12 @@ import Image from 'next/image'
 
 const CTASection = ({className}: {className?: string}) => {
 	return (
-		<div className={cn('relative', className)}>
-			<div className="container mx-auto h-full 2xl:max-w-[1920px] p-12 flex flex-col items-start gap-12">
-				<h2 className="max-w-[900px] text-8xl text-white">
+		<div className={cn('relative overflow-hidden', className)}>
+			<div className="container mx-auto h-full 2xl:max-w-[1920px] px-6 lg:px-12 py-12 flex flex-col items-start gap-12">
+				<h2 className="lg:max-w-[500px] xl:max-w-[700px] 2xl:max-w-[900px] text-4xl lg:text-5xl xl:text-7xl 2xl:text-8xl text-white">
 					Earn money from your writing.
 				</h2>
-				<p className="max-w-[500px] font-sans font-medium text-lg leading-6 text-white">
+				<p className="max-w-[500px] font-sans font-medium text-sm lg:text-lg leading-6 text-white">
 					Writing has its rewards when you join the Partner Program. Learn how to get paid for the content you publish
 					and the audiences you build.
 				</p>
