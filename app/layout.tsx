@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
-import { Inter, Libre_Caslon_Text } from 'next/font/google'
+import type {Metadata} from 'next'
+import {Inter, Libre_Caslon_Text} from 'next/font/google'
 import './globals.css'
 import clsx from 'clsx'
 import Navbar from '@/components/Navbar'

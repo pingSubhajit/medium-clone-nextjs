@@ -1,5 +1,4 @@
 import Button from '@/components/utilities/Button'
-import Navbar from '@/components/Navbar'
 import HeroHead from '@/components/hero/HeroHead'
 import {cn} from '@/lib/utils'
 import TypingAnimation from '@/components/utilities/TypingAnimation'
